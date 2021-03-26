@@ -69,7 +69,7 @@ public class KartController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             float time = Time.timeScale == 1 ? .2f : 1;
             Time.timeScale = time;
@@ -79,8 +79,10 @@ public class KartController : MonoBehaviour
         transform.position = sphere.transform.position - new Vector3(0, 0.4f, 0);
 
         //Accelerate
-        if (Input.GetButton("Fire1"))
+        if (Input.GetAxis("Vertical") != 0)
+		{
             speed = acceleration;
+		}
 
         //Steer
         if (Input.GetAxis("Horizontal") != 0)
@@ -165,8 +167,8 @@ public class KartController : MonoBehaviour
         RaycastHit hitOn;
         RaycastHit hitNear;
 
-        Physics.Raycast(transform.position + (transform.up*.1f), Vector3.down, out hitOn, 1.1f,layerMask);
-        Physics.Raycast(transform.position + (transform.up * .1f)   , Vector3.down, out hitNear, 2.0f, layerMask);
+        Physics.Raycast(transform.position + (transform.up * .1f), Vector3.down, out hitOn, 1.1f,layerMask);
+        Physics.Raycast(transform.position + (transform.up * .1f), Vector3.down, out hitNear, 2.0f, layerMask);
 
         //Normal Rotation
         kartNormal.up = Vector3.Lerp(kartNormal.up, hitNear.normal, Time.deltaTime * 8.0f);
