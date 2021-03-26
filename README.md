@@ -1,3 +1,3 @@
-# Mario Kart's Drifting | Mix and Jam
+# Racing Game
 
-This is the official respository for the thirteenth episode of the [Mix and Jam Youtube Channel](https://www.youtube.com/c/MixAndJam)!
+Based off the example project made by Mix and Jam. [Mix and Jam Youtube Channel](https://www.youtube.com/c/MixAndJam)
